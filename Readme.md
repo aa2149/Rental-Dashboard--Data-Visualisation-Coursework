@@ -119,6 +119,7 @@ Built with D3.js, the dashboard walks users through a scrollable storytelling ex
 4. Scroll to explore the interactive visualizations
 
 > No build process needed — D3 is imported from CDN and all modules use native ES modules.
+> Check it out! (https://gilded-choux-92f9da.netlify.app)
 
 ---
 
