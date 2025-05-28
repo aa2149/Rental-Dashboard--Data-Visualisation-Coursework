@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where Can You Afford to Rent in Dubai?</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <section class="parallax">
+    <img src="stars.png" id="stars" alt="Stars background" />
+    <img src="burjkhalifa.png" id="burjkhalifa" alt="Burj Khalifa" />
+    <img src="building.png" id="building" alt="Building" />
+  </section>
+
+<section class="sec">
+    <h1 style="font-size: 32px; margin-bottom: 1rem;">
+
+    <h1 style="text-align: center; font-size: 50px;">Where Can You Afford to Rent in UAE?</h1>
+
+    <h1 style="text-align: center; font-size: 30px; color: #fca311;">Explore the vast options for housing to help you find your dream home here in the jewel of the Arabian peninsula!</h1>
+
+  <p style="font-size: 25px;">
+    The UAE real estate market is famously diverse, stretching
+    from luxury Downtown Dubai properties to more family-friendly suburbs
+    in Sharjah. Where can you find the right balance between cost and 
+    space?
+  </p>
+
+  <p style="font-size: 25px;">  
+    We analyzed thousands of listings across seven Emirates to see which 
+    city truly offers more room for your Dirham.
+  </p>
+
+  <p style="font-size: 25px;">
+    Scroll down to begin exploring how rent varies by location and property
+    type.
+  </p>
+  
+  <h2 style="font-size: 32px; margin-bottom: 1rem;">
+  <h2> Rent Across Emirates</h2>
+
+  <p style="font-size: 25px;">
+    Explore rent by city: annual cost vs price per square foot.
+  </p>
+
+  <p style="font-size: 25px;">
+    UAE is a global hub for soaring skyscrapers and sprawling suburban developments. But
+      with prestige comes a price. The story
+  </p>
+
+    <p style="font-size: 25px;">
+      The story begins with a simple question: Where in the UAE can you afford to rent?
+      The first two charts highlight just how wide the rent spectrum is across the Emirates, not
+      only in terms of total cost but cost per square foot - and Dubai clearly leads in both.
+
+    </p>
+
+    <p style="color: orange;">
+      Select between the two options to visualize rent or rent per square feet in each city.
+    </p>
+    <div class="metric-buttons">
+      <button class="button active" data-metric="Average Rent">Average Rent</button>
+      <button class="button" data-metric="Average Rent per Sq Ft">Rent per Sq Ft</button>
+    </div>
+    <svg id="city-bar-svg" width="900" height="500"></svg>
+    
+  </section>
+
+
+  <section class="sec">
+    <h2 style="font-size: 32px; margin-bottom: 1rem;">
+
+    <h2> Compare Two Cities using the Butterfly Chart</h2>
+    
+    <p style="font-size: 25px;">
+      Going deeper we explore what kinds of properties dominate each city.
+    </p>
+
+    <p style="font-size: 25px;">
+      For example, are you more likely to find a studio or a villa in Sharjah vs Dubai?
+    </p>
+
+    <p style="font-size: 25px;">
+      This adds nuance to the affordability converstation. 
+    </p>
+
+    <p style="color: orange;">
+      Select exactly <strong>2 cities</strong> below to compare key rental metrics.
+    </p>
+    
+    <div style="margin-bottom: 10px;">
+      <p style="color: orange; font-weight: bold; margin-bottom: 5px;">
+        Select 2 Cities to Compare:
+        <span id="city-limit-hint" style="color: #fca311; font-weight: normal; font-size: 14px;">(Tap to select)</span>
+      </p>
+    </div>
+    
+      <div id="city-selector" style="display: flex; flex-wrap: wrap; gap: 10px;"></div>
+    </div>
+
+    <button id="reset-cities-btn" class="reset-btn">Reset Cities</button>
+
+    <div id="attr-selector" style="margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 10px;"></div>
+    <div id="city-legend" style="margin-bottom: 20px;"></div>
+    <div id="chart-container" class="chart-box"></div>
+
+    <h2 style="font-size: 32px; margin-bottom: 1rem;">
+    <h2>Real Estate Property Types per City</h2>
+  
+    <p style="font-size: 25px;">
+      Going deeper, we explore what kinds of properties dominate each city.
+    </p>
+
+    <p style="font-size: 25px;">
+     For example, are you more likely to find a studio or a villa in Sharjah vs Dubai? 
+    </p>
+
+    <p style="font-size: 25px;">
+      This adds nuance to the affordability converstation.
+      
+    </p>
+
+    <p style="font-size: 25px;">
+      As you can see, cities like Umm Al Quwain and Fujairah have very minimal options so they cannot be visualized in this bar graph.
+      
+    </p>
+
+    <p style="font-size: 25px; font-style: italic; color: orange;">
+      Click on each bar to get an in depth analysis of each city and what property type.
+    </p>
+
+    <p style="color: orange;">
+      Scale the graph to visualize the smaller bars in greater detail.
+    </p>
+
+    <div id="scaleControl">
+      <label for="yScaleSlider">Y-axis Scale Factor:</label>
+      <input type="range" id="yScaleSlider" min="1" max="5" step="0.1" value="1" />
+      <span id="scaleValue">1.0</span>
+    </div>
+  </section>
+  
+  <section class="sec">
+    <div class="chart-container">
+      <div id="barChart" class="bar-chart"></div>
+      <div id="pieChart" class="pie-chart"></div>
+    </div>
+  
+    <div id="tooltip" class="tooltip"></div>
+  </section>
+
+  <section class="sec">
+
+      <h2 style="font-size: 32px; margin-bottom: 1rem;">
+
+    <h2>Affordability Bubble Chart</h2>
+
+    <p style="font-size: 25px;">
+      Here's where it clicks: not just about how much you pay - but what you get in return.
+    </p>
+
+    <p style="font-size: 25px;">
+     The bubble chart reveals which cities (or areas) offer the best space for your money.
+    </p>
+
+    <p style="font-size: 25px;">
+      You start to see cities that may not be cheap overall but give you 
+      better space value, and otheres that are pricey yet cramped.
+    </p>
+
+    <p style="font-size: 25px; font-style: italic; color: orange;">
+      Bigger bubble means bigger rent. You may hover over each bubble to see details.
+    </p>
+
+    <p style="color: orange;">
+      Bubble size = Avg Rent/sqft | X = Avg Area | Y = Avg Rent/sqft
+    </p>
+    
+    <div id="bubble-chart-container"></div>
+  </section>
+
+
+  <section class="sec">
+    <h2>Median Rent by District</h2>
+    
+
+    <p style="font-size: 25px;">
+      Zoom into Dubai, the UAE's rental epicenter, to identify which 
+      neighborhoods align with your lifestyle and budget.
+     </p>
+ 
+     <p style="font-size: 25px;">
+       Whether you're looking for space, value, or prestige,
+       the map helps you make a grounded, location-specific decision.
+     </p>
+
+     <p style="font-size: 25px; font-style: italic; color: orange;">
+      Click on the map to explore rent levels by area.
+    </p>
+    
+    <div id="map-container" style="position: relative;">
+      <svg id="map" style="width: 100%; height: 90vh; border-radius: 10px;"></svg>
+      <button id="reset-map-btn" style="
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #fca311;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      ">Reset Map</button>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Rent Prediction Model</h2>
+    <p style="font-size:25px">This visualization shows a rent prediction model comparing property area (sqft) to rent (AED) across UAE cities. Each dot represents a property, with trend lines showing how rent scales with area in each emirate. A slider lets users filter by minimum area to focus on larger listings. The chart also allows hover comparison between actual and predicted rent, highlighting pricing trends and anomalies.</p>
+    <p style="font-size: 25px; font-style: italic; color: orange;">
+      Hover to see predicted vs actual rent.
+    </p>
+    <p style="color: orange;">
+     Use the slider to scale the graph.
+    </p>
+    <div style="margin: 20px;">
+      <label for="xMinSlider" style="color:white;">Minimum Area (sqft): </label>
+      <input type="range" id="xMinSlider" min="10" max="10000" step="10" value="100" />
+      <span id="xMinValue" style="color:orange;">100</span>
+    </div>
+    <svg id="rent-vs-area-chart" width="1000" height="600"></svg>
+
+  </section>
+
+  <section class="sec">
+    <h1>Overall Conclusion and Summary?</h1>
+ 
+  
+    <p style="font-size: 25px;">
+      The analysis of rental listings across the UAE reveals a clear spectrum of affordability and value,
+      with each emirate offering distinct advantages depending on a renters priorities.
+      Dubai stands out as the most expensive but also the most diverse in terms of property types and availability.
+      Cities like Sharjah and Ajman offer more value for money, particularly for families or those seeking larger living spaces at lower costs.
+      Meanwhile, lesser-known emirates such as
+      Umm Al Quwain may present hidden affordability benefits but offer fewer listings and choices.
+    </p>
+  
+    <p style="font-size: 25px;">  
+      One key drawback of the dataset, however, lies in the uneven distribution of property listings across cities.
+      Dubai, being the most active real estate market, has a disproportionately high number of listings,
+      while Umm Al Quwain has significantly fewer. This skews the comparison, potentially limiting the
+      accuracy and representativeness of findings for cities with limited data. Future analyses would benefit
+      from a more balanced dataset to ensure fairer comparisons and deeper insights into rental trends across all emirates.
+  
+    </p>
+
+   
+
+    
+  </section>
+  
+  <section class="sec">
+    <footer style="text-align: center;">
+      <p>Made with using D3.js | Last updated 2025</p>
+    </footer>
+  </section>
+
+
+
+  <script type="module" src="Charts/main.js"></script>
+</body>
+</html>

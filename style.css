@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #121212;
+    color: white;
+  }
+  
+  .parallax {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+  }
+  
+  .parallax img {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  
+  #stars {
+    top: 0;
+    z-index: 1;
+  }
+  
+  #burjkhalifa {
+    top: 0;
+    z-index: 2;
+  }
+  
+  #building {
+    bottom: 0;
+    z-index: 3;
+  }
+  
+  .sec {
+    padding: 60px 10%;
+    background: #1e1e2e;
+    border-bottom: 1px solid #333;
+  }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #e0e0e0;
+    background: #121212;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sec {
+    padding: 60px 10%;
+    border-bottom: 1px solid #333;
+  }
+  
+  h2 {
+    color: #fca311;
+  }
+  
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  
+  .chart-box {
+    background-color: #1e1e2e;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .metric-buttons {
+    margin-top: 10px;
+  }
+  
+  .button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  .button.active {
+    background-color: #fca311;
+    color: black;
+  }
+  
+  .reset-btn {
+    background-color: #fca311;
+    color: black;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .city-pill {
+    padding: 10px 18px;
+    background-color: #222a3f;
+    border: 1px solid #666;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: bold;
+    user-select: none;
+  }
+  
+  .city-pill:hover {
+    background-color: #333b56;
+  }
+  
+  .city-pill.selected {
+    background-color: #fca311;
+    color: black;
+  }
+  
+  .city-pill.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  /* .city-legend-entry {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .city-pill.selected {
+    background-color: #fca311;
+    font-weight: bold;
+  }
+  
+  .city-legend-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 8px;
+  } */
+
+  .city-pill {
+    padding: 10px 18px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #ccc;
+    font-weight: 500;
+    border: 1px solid #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+  
+  .city-pill:hover {
+    background-color: #333;
+    border-color: #888;
+    color: white;
+  }
+  
+  .city-pill.selected {
+    background-color: #fca311;
+    color: black;
+    font-weight: bold;
+    border: none;
+  }
+  
+  #city-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  
+  #city-limit-hint {
+    font-size: 13px;
+    margin-left: 5px;
+  }
+  
+  .reset-btn {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    background-color: #fca311;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .reset-btn:hover {
+    background-color: #e5920a;
+  }
+
+  #map-container {
+    /* Center the map container on the page */
+    width: 80%;
+    margin: 0 auto;
+  
+    /* Visual border around the map */
+    border: 2px solid #fca311;
+    border-radius: 10px;
+  
+    /* If you want a background color behind the map */
+    background-color: #1b1b2f;
+  
+    /* Let the container resize based on content */
+    position: relative;
+    overflow: hidden; /* hides any overflow, if needed */
+  }
+  
+  #map {
+    display: block;
+    width: 100%;
+    height: auto; /* responsive scaling */
+  }
+  
+  #reset-map-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fca311;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    z-index: 10; /* ensure it's above the SVG */
+  }
+
+  .tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 999;
+  }
+  
+  #bubble-chart svg {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border: 1px solid #fca311;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  #pieChart {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .pie-wrapper {
+    display: flex;
+    flex-direction: row; /* 🔁 Changed from column */
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+  .legend-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px; /* optional spacing between legend items */
+  }
